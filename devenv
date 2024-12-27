@@ -5,6 +5,7 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
     echo "no xdg config hom"
     echo "using ~/.config"
     XDG_CONFIG_HOME=$HOME/.config
+    DEV_ENV="$HOME/.config"
 fi
 
 if [ -z "$DEV_ENV" ]; then
