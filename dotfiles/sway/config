@@ -7,7 +7,7 @@ set $down j
 set $up k
 set $right l
 #Standard apps
-set $term kitty
+set $term /home/simonmertins/.local/bin/ghostty
 set $menu exec fuzzel
 
 #input options
@@ -42,13 +42,15 @@ bindsym $mod+Mod1+l exec swaylock --image /home/simonmertins/dev/dotfiles/backgr
     bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
     bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
     bindsym $mod+Return exec $term
+    bindsym Mod1+4 exec $term -e lazydocker
+
 
     # Kill focused window
     bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+n open ghostty
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
