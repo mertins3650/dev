@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-rm ~/.zshrc
-ln -s "$HOME/dev/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
 sudo apt install zsh
 hash -r
 sudo chsh -s $(which zsh)

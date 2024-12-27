@@ -21,6 +21,4 @@ make -C ~/neovim clean
 make -C ~/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make -C ~/neovim install
 
-rm -rf ~/.config/nvim
 
-ln -s $HOME/dev/dotfiles/nvim/ $HOME/.config/nvim

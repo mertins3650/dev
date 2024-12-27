@@ -3,6 +3,3 @@
 sudo apt -y install python3-i3ipc
 sudo apt -y install sway waybar swaylock swayidle
 
-ln -s "$HOME/dev/dotfiles/sway/config" "$HOME/.config/sway/config"
-ln -s "$HOME/dev/dotfiles/waybar" "$HOME/.config/waybar
-ln -s "$HOME/dev/dotfiles/scripts/autotiling" "$HOME/.local/bin/autotiling"
