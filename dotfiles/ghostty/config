@@ -1,0 +1,6 @@
+shell-integration-features = no-cursor,no-sudo,title
+window-decoration = false
+theme = rose-pine
+command = tmux
+font-size = 15
+font-family = "CaskaydiaCove Nerd Font Mono"
