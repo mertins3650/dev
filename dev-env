@@ -5,7 +5,6 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
     echo "no xdg config hom"
     echo "using ~/.config"
     XDG_CONFIG_HOME=$HOME/.config
-    DEV_ENV="$HOME/.config"
 fi
 
 if [ -z "$DEV_ENV" ]; then
@@ -27,8 +26,7 @@ log() {
 
 log "env: $DEV_ENV"
 
-update_files() {
-    log "copying over files from: $1"
+    log "creating symlinks from: $1"
     pushd $1 &> /dev/null
     (
         configs=`find . -mindepth 1 -maxdepth 1 -type d`
@@ -40,29 +38,10 @@ update_files() {
                 rm -rf $directory
             fi
 
-            log "    copying env: cp $c $2"
+            log "    creating symlink: ln -s $(realpath $c) $directory"
             if [[ $dry_run == "0" ]]; then
-                ln -s ./$c $2
+                ln -s $(realpath $c) $directory
             fi
         done
-
     )
     popd &> /dev/null
-}
-
-copy() {
-    log "removing: $2"
-    if [[ $dry_run == "0" ]]; then
-        rm $2
-    fi
-    log "copying: $1 to $2"
-    if [[ $dry_run == "0" ]]; then
-        cp $1 $2
-    fi
-}
-
-update_files $DEV_ENV/dev/dotfiles/nvim/ $HOME/.config/nvim
-update_files  $DEV_ENV/dev/dotfiles/sway/config $HOME/.config/sway/config
-update_files $DEV_ENV/dev/dotfiles/waybar $HOME/.config/waybar
-update_files $DEV_ENV/dev/dotfiles/scripts/autotiling $HOME/.local/bin/autotiling
-update_files $DEV_ENV/dev/dotfiles/zsh/.zshrc $HOME/.zshrc
