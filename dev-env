@@ -26,22 +26,73 @@ log() {
 
 log "env: $DEV_ENV"
 
-    log "creating symlinks from: $1"
-    pushd $1 &> /dev/null
-    (
-        configs=`find . -mindepth 1 -maxdepth 1 -type d`
-        for c in $configs; do
-            directory=${2%/}/${c#./}
-            log "    removing: rm -rf $directory"
+log "creating symlinks from: $1"
+pushd $1 &> /dev/null
+(
+    # Include both files and directories in the find command
+    configs=$(find . -mindepth 1 -maxdepth 1)
 
-            if [[ $dry_run == "0" ]]; then
-                rm -rf $directory
-            fi
+    for c in $configs; do
+        # If it's .config or .local, process the contents inside them
+        if [[ $(basename $c) == ".config" || $(basename $c) == ".local" ]]; then
+            # Process the contents of .config or .local
+            contents=$(find $c -mindepth 1 -maxdepth 1)
+            for item in $contents; do
+                if [ -d "$item" ]; then
+                    target_dir="${XDG_CONFIG_HOME}/$(basename $item)"
+                    log "    removing: rm -rf $target_dir"
 
-            log "    creating symlink: ln -s $(realpath $c) $directory"
-            if [[ $dry_run == "0" ]]; then
-                ln -s $(realpath $c) $directory
+                    if [[ $dry_run == "0" ]]; then
+                        rm -rf $target_dir
+                    fi
+
+                    log "    creating symlink: ln -s $(realpath $item) $target_dir"
+                    if [[ $dry_run == "0" ]]; then
+                        ln -s $(realpath $item) $target_dir
+                    fi
+                elif [ -f "$item" ]; then
+                    target_file="${XDG_CONFIG_HOME}/$(basename $item)"
+                    log "    removing: rm -f $target_file"
+
+                    if [[ $dry_run == "0" ]]; then
+                        rm -f $target_file
+                    fi
+
+                    log "    creating symlink: ln -s $(realpath $item) $target_file"
+                    if [[ $dry_run == "0" ]]; then
+                        ln -s $(realpath $item) $target_file
+                    fi
+                fi
+            done
+        else
+            # For regular files and directories, process normally
+            if [ -d "$c" ]; then
+                target_dir="${XDG_CONFIG_HOME}/$(basename $c)"
+                log "    removing: rm -rf $target_dir"
+
+                if [[ $dry_run == "0" ]]; then
+                    rm -rf $target_dir
+                fi
+
+                log "    creating symlink: ln -s $(realpath $c) $target_dir"
+                if [[ $dry_run == "0" ]]; then
+                    ln -s $(realpath $c) $target_dir
+                fi
+            elif [ -f "$c" ]; then
+                target_file="${XDG_CONFIG_HOME}/$(basename $c)"
+                log "    removing: rm -f $target_file"
+
+                if [[ $dry_run == "0" ]]; then
+                    rm -f $target_file
+                fi
+
+                log "    creating symlink: ln -s $(realpath $c) $target_file"
+                if [[ $dry_run == "0" ]]; then
+                    ln -s $(realpath $c) $target_file
+                fi
             fi
-        done
-    )
-    popd &> /dev/null
+        fi
+    done
+)
+popd &> /dev/null
+
