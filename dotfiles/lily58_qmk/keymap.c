@@ -24,17 +24,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_LOWER] = LAYOUT(
   _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  
   _______, _______, _______, _______, KC_BRID, KC_BRIU,                    KC_PGDN, KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_F12,
-  _______, _______, _______, _______, _______, _______,                    _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+  _______, _______, _______, _______, _______, _______,                     _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
   _______, _______, _______, _______, _______, _______, KC_VOLD,  KC_VOLU, _______, _______, _______, _______, _______, _______,
                              _______, _______, _______, _______,  KC_PENT, _______, _______, _______
 ),
 
 [_RAISE] = LAYOUT(
-  _______,       _______,       _______,      _______,    _______,    _______,                               _______,      _______,       _______,      _______,    _______,    _______,
-  KC_GRV,        RALT(KC_2),    LSFT(KC_EQL), KC_MINS,    LSFT(KC_7), RALT(KC_RBRC),                         LSFT(KC_5),   RALT(KC_NUBS), LSFT(KC_0),   KC_EQL,     LSFT(KC_3), LSFT(KC_COMM),
-  LSFT(KC_NUHS), LSFT(KC_SLSH), RALT(KC_7),   RALT(KC_8), LSFT(KC_8), LSFT(KC_2),                            KC_BSLS,      LSFT(KC_9),    RALT(KC_9),   RALT(KC_0), RALT(KC_4), LSFT(KC_DOT),
-  KC_LCTL,       RALT(KC_E),    RALT(KC_3),   LSFT(KC_6), KC_NUBS,    _______,       LSFT(KC_RBRC), KC_RBRC, LSFT(KC_GRV), LSFT(KC_NUBS), RALT(KC_EQL), KC_LBRC,    KC_RBRC,    KC_BSLS,
-                                              _______,    _______,    _______,       _______,       _______, _______,      _______,       _______
+  _______,       RALT(KC_E),    RALT(KC_3),   LSFT(KC_6), LSFT(KC_EQL), _______,                               _______,      LSFT(KC_GRV),  KC_EQL,       RALT(KC_EQL),  KC_RBRC,     _______,
+  KC_GRV,        RALT(KC_2),    KC_NUBS,      KC_MINS,    LSFT(KC_7),   RALT(KC_RBRC),                         LSFT(KC_5),   RALT(KC_NUBS), LSFT(KC_0),   LSFT(KC_NUBS), LSFT(KC_3), LSFT(KC_COMM),
+  LSFT(KC_NUHS), LSFT(KC_SLSH), RALT(KC_7),   RALT(KC_8), LSFT(KC_8),   LSFT(KC_2),                            KC_BSLS,      LSFT(KC_9),    RALT(KC_9),   RALT(KC_0),    RALT(KC_4), LSFT(KC_DOT),
+  KC_LCTL,       _______,       _______,      _______,    _______,      _______,       LSFT(KC_RBRC), KC_RBRC, _______,      _______,       _______,      _______,       _______,    _______,
+                                              _______,    _______,      _______,       _______,       _______, _______,      _______,       _______
 ),
 };
 
