@@ -48,6 +48,7 @@ bindsym $mod+Mod1+l exec swaylock --image /home/simonmertins/dev/dotfiles/backgr
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+n open ghostty
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
