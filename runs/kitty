@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-sudo apt -y install kitty
-
-rm -rf ~/.config/kitty
-ln -s $HOME/dev/dotfiles/kitty/ $HOME/.config/kitty
