@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-read -p "Do you want to $HOME/dev and clone the repository? (y/n): " clone_choice
+read -p "Do you want to remove  $HOME/dev and clone the repository? (y/n): " clone_choice
 if [[ "$clone_choice" != "y" ]]; then
     echo "Exiting."
     exit 0
