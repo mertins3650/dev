@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-sudo apt update >/dev/null
-sudo apt install -y git >/dev/null
 
-read -p "Do you want to remove the $HOME/dev and clone the repository? (y/n): " clone_choice
+read -p "Do you want to remove the existing directory and clone the repository? (y/n): " clone_choice
 if [[ "$clone_choice" != "y" ]]; then
     echo "Skipping cloning process. Exiting."
     exit 0
 fi
+
+sudo apt update >/dev/null
+sudo apt install -y git >/dev/null
 
 echo "Cloning files..."
 rm -rf "$HOME/dev"
@@ -18,8 +19,9 @@ else
     exit 1
 fi
 
-read -p "Do you want to execute $HOME/dev/run? (y/n): " choice
-if [[ "$choice" == "y" ]]; then
+# Prompt the user to execute the script
+read -p "Do you want to execute $HOME/dev/run? (y/n): " run_choice
+if [[ "$run_choice" == "y" ]]; then
     if [[ -x "$HOME/dev/run" ]]; then
         "$HOME/dev/run"
     else
