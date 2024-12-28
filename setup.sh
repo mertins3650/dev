@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
 
 # gum is needed for selection
-cd /tmp || exit 1
+set -e
+TMP_DIR=$(mktemp -d)
 GUM_VERSION="0.14.3"
-wget -qO gum.deb "https://github.com/charmbracelet/gum/releases/download/v${GUM_VERSION}/gum_${GUM_VERSION}_amd64.deb"
-sudo apt-get install -y ./gum.deb
+GUM_DEB="${TMP_DIR}/gum_${GUM_VERSION}_amd64.deb"
+
+# Download and install gum
+wget -qO "${GUM_DEB}" "https://github.com/charmbracelet/gum/releases/download/v${GUM_VERSION}/gum_${GUM_VERSION}_amd64.deb"
+sudo apt-get install -y "${GUM_DEB}"
+rm -rf "${TMP_DIR}"
+
 if ! command -v gum >/dev/null 2>&1; then
     echo "Error: gum installation failed. Exiting."
     exit 1
 fi
-[[ -f gum.deb ]] && rm gum.deb
-cd - || exit 1
 
-CHOICE1=("Yes" "No")
-answer1=$(gum choose "${CHOICE1[@]}" --height 10 --header "Clone repository?")
-
+# Prompt to clone repository
+answer1=$(gum choose "Yes" "No" --height 10 --header "Clone repository?")
 if [[ "${answer1}" == "Yes" ]]; then
     echo "Cloning files..."
     sudo apt-get update >/dev/null 2>&1
@@ -31,9 +34,9 @@ else
     exit 0
 fi
 
-CHOICE2=("Yes" "No")
-answer2=$(gum choose "${CHOICE2[@]}" --height 10 --header "Install apps?")
-if [[ "$answer2" == "Yes" ]]; then
+# Prompt to install apps
+answer2=$(gum choose "Yes" "No" --height 10 --header "Install apps?")
+if [[ "${answer2}" == "Yes" ]]; then
     if [[ -x "$HOME/dev/run" ]]; then
         "$HOME/dev/run"
     else
@@ -45,19 +48,17 @@ else
     exit 0
 fi
 
-CHOICE3=("Yes" "No")
-answer3=$(gum choose "${CHOICE3[@]}" --height 10 --header "Install apps?")
-if [[ "$answer2" == "Yes" ]]; then
+# Prompt to set up development environment
+answer3=$(gum choose "Yes" "No" --height 10 --header "Set up development environment?")
+if [[ "${answer3}" == "Yes" ]]; then
     if [[ -x "$HOME/dev/dev-env" ]]; then
-        DEV_ENV="$HOME/dev/"
         "$HOME/dev/dev-env"
     else
         echo "Error: $HOME/dev/dev-env is not executable or does not exist."
         exit 1
     fi
 else
-
     echo "Exiting."
     exit 0
-
 fi
+
