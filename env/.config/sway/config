@@ -20,7 +20,7 @@ input "type:pointer" accel_profile flat
 include /etc/sway/config-vars.d/*
 
 #Display options
-output * bg /home/simonmertins/dev/dotfiles/backgrounds/shaded_landscape.png fill
+output * bg /home/simonmertins/dev/misc/backgrounds/shaded_landscape.png fill
 gaps inner 5
 gaps outer 5
 default_border pixel 4
@@ -29,10 +29,10 @@ bindsym $mod+Shift+d exec swaymsg output eDP-1 disable
 
 #Locksreen
 exec_always swayidle -w \
-    timeout 300 'swaylock -f --image /home/simonmertins/dev/dotfiles/backgrounds/shaded_landscape.png' \
+    timeout 300 'swaylock -f --image /home/simonmertins/dev/misc/backgrounds/shaded_landscape.png' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f --image /home/simonmertins/dev/dotfiles/backgrounds/shaded_landscape.png'
-bindsym $mod+Mod1+l exec swaylock --image /home/simonmertins/dev/dotfiles/backgrounds/shaded_landscape.png 
+    before-sleep 'swaylock -f --image /home/simonmertins/dev/misc/backgrounds/shaded_landscape.png'
+bindsym $mod+Mod1+l exec swaylock --image /home/simonmertins/dev/misc/backgrounds/shaded_landscape.png 
 
 ### Key bindings
     #Screen/audio control
