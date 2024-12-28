@@ -15,10 +15,7 @@ cd - || exit 1
 CHOICE1=("Yes" "No")
 answer1=$(gum choose "${CHOICE1[@]}" --height 10 --header "Clone repository?")
 
-if [[ "${answer1,,}" == "no" ]]; then
-    echo "Exiting."
-    exit 0
-else
+if [[ "${answer1}" == "Yes" ]]; then
     echo "Cloning files..."
     sudo apt-get update >/dev/null 2>&1
     sudo apt-get install -y git >/dev/null 2>&1
@@ -29,6 +26,9 @@ else
         echo "Failed to clone repository. Exiting."
         exit 1
     fi
+else
+    echo "Exiting."
+    exit 0
 fi
 
 CHOICE2=("Yes" "No")
@@ -45,3 +45,19 @@ else
     exit 0
 fi
 
+CHOICE3=("Yes" "No")
+answer3=$(gum choose "${CHOICE3[@]}" --height 10 --header "Install apps?")
+if [[ "$answer2" == "Yes" ]]; then
+    if [[ -x "$HOME/dev/dev-env" ]]; then
+        DEV_ENV="$HOME/dev/"
+        "$HOME/dev/dev-env"
+    else
+        echo "Error: $HOME/dev/dev-env is not executable or does not exist."
+        exit 1
+    fi
+else
+
+    echo "Exiting."
+    exit 0
+
+fi
