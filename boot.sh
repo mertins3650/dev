@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-sudo apt update >/dev/null
-sudo apt install -y git >/dev/null
 
 read -p "Do you want to $HOME/dev and clone the repository? (y/n): " clone_choice
 if [[ "$clone_choice" != "y" ]]; then
@@ -9,6 +7,8 @@ if [[ "$clone_choice" != "y" ]]; then
     exit 0
 else
     echo "Cloning files..."
+    sudo apt-get update >/dev/null
+    sudo apt-get install -y git >/dev/null
     rm -rf "$HOME/dev"
     if git clone https://github.com/mertins3650/dev.git "$HOME/dev" >/dev/null; then
         echo "Clone successful!"
