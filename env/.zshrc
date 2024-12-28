@@ -10,7 +10,6 @@ source $ZSH/oh-my-zsh.sh
 
 # bun completions
 [ -s "/home/simon/.bun/_bun" ] && source "/home/simon/.bun/_bun"
-export PATH=$PATH:$HOME/.local/bin
 
 # zoxide
 alias cd="z"
