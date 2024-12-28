@@ -27,7 +27,8 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 export PATH="$PATH:~"
 export PATH="$PATH:$HOME/scripts"
-export PATH=$PATH:/usr/local/bin
+export PATH="$PATH:$HOME/..local/bin"
+export PATH="$PATH:$HOME/..local/scripts"
 export PATH="$HOME:$PATH"
 
 
