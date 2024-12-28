@@ -68,3 +68,7 @@ export PATH=$HOME/.local/bin:$PATH
 alias qmkenv="source ~/.venvs/qmk/bin/activate"
 alias qmkcompile="qmk compile -kb lily58/rev1 -km lily58_qmk -e CONVERT_TO=promicro_rp2040"
 
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
