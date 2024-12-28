@@ -3,6 +3,12 @@
 sudo apt update >/dev/null
 sudo apt install -y git >/dev/null
 
+read -p "Do you want to remove the $HOME/dev and clone the repository? (y/n): " clone_choice
+if [[ "$clone_choice" != "y" ]]; then
+    echo "Skipping cloning process. Exiting."
+    exit 0
+fi
+
 echo "Cloning files..."
 rm -rf "$HOME/dev"
 if git clone https://github.com/mertins3650/dev.git "$HOME/dev" >/dev/null; then
@@ -12,7 +18,6 @@ else
     exit 1
 fi
 
-# Prompt the user to execute the script
 read -p "Do you want to execute $HOME/dev/run? (y/n): " choice
 if [[ "$choice" == "y" ]]; then
     if [[ -x "$HOME/dev/run" ]]; then
