@@ -52,7 +52,7 @@ fi
 answer3=$(gum choose "Yes" "No" --height 10 --header "Set up development environment?")
 if [[ "${answer3}" == "Yes" ]]; then
     if [[ -x "$HOME/dev/dev-env" ]]; then
-        DEV_ENV="$HOME/dev"
+        export DEV_ENV="$HOME/dev"
         "$HOME/dev/dev-env"
     else
         echo "Error: $HOME/dev/dev-env is not executable or does not exist."
