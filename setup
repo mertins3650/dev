@@ -2,19 +2,21 @@
 
 # gum is needed for selection
 set -e
-TMP_DIR=$(mktemp -d)
-GUM_VERSION="0.14.3"
-GUM_DEB="${TMP_DIR}/gum_${GUM_VERSION}_amd64.deb"
 
-# Download and install gum
-wget -qO "${GUM_DEB}" "https://github.com/charmbracelet/gum/releases/download/v${GUM_VERSION}/gum_${GUM_VERSION}_amd64.deb"
-sudo apt-get install -y "${GUM_DEB}"
-rm -rf "${TMP_DIR}"
+cd /tmp
+GUM_VERSION="0.14.3" # Use known good version
+wget -qO gum.deb "https://github.com/charmbracelet/gum/releases/download/v${GUM_VERSION}/gum_${GUM_VERSION}_amd64.deb"
+sudo apt-get install -y ./gum.deb
+rm gum.deb
+cd -
 
 if ! command -v gum >/dev/null 2>&1; then
     echo "Error: gum installation failed. Exiting."
     exit 1
 fi
+
+
+    sudo apt-get install -y curl >/dev/null 2>&1
 
 # Prompt to clone repository
 answer1=$(gum choose "Yes" "No" --height 10 --header "Clone repository?")
