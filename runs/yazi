@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-sudo CARGO_HOME="$HOME/.cargo" /bin/bash -c "source $CARGO_HOME/env && cargo install --locked yazi-fm yazi-cli"
-
+cargo install --locked yazi-fm yazi-cli
