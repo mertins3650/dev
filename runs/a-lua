@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+
+# lua btw
+cargo install stylua
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
+
+# luarocks
+pushd /tmp/luarocks-3.11.0
+(
+    wget --output-document /tmp/luarocks.tar.gz https://luarocks.org/releases/luarocks-3.11.0.tar.gz
+    tar zxpf /tmp/luarocks.tar.gz -C /tmp
+    cd
+    ./configure && make && sudo make install
+)
+popd
+
+luarocks install luacheck
