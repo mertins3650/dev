@@ -69,3 +69,10 @@ else
     exit 0
 fi
 
+answer4=$(gum choose "Yes" "No" --height 10 --header "Reboot?")
+if [[ "${answer4}" == "Yes" ]]; then
+    reboot
+else
+    echo "Exiting."
+    exit 0
+fi
