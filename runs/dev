@@ -4,8 +4,6 @@
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update
 
-git config --global user.email "mertins99@gmail.com"
-git config --global user.name "Simon Mertins"
 
 sudo apt -y install python3
 
