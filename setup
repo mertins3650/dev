@@ -2,6 +2,7 @@
 
 # gum is needed for selection
 set -e
+sudo apt-get update >/dev/null 2>&1
 
 cd /tmp
 GUM_VERSION="0.14.3" # Use known good version
@@ -22,7 +23,6 @@ fi
 answer1=$(gum choose "Yes" "No" --height 10 --header "Clone repository?")
 if [[ "${answer1}" == "Yes" ]]; then
     echo "Cloning files..."
-    sudo apt-get update >/dev/null 2>&1
     sudo apt-get install -y git >/dev/null 2>&1
     email=$(gum input --placeholder "Enter your Git email")
 
