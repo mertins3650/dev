@@ -22,6 +22,12 @@ if [[ "${answer1}" == "Yes" ]]; then
     echo "Cloning files..."
     sudo apt-get update >/dev/null 2>&1
     sudo apt-get install -y git >/dev/null 2>&1
+    email=$(gum input --placeholder "Enter your Git email")
+
+name=$(gum input --placeholder "Enter your Git name")
+
+git config --global user.email "$email"
+git config --global user.name "$name"
     rm -rf "$HOME/dev"
     if git clone https://github.com/mertins3650/dev.git "$HOME/dev" >/dev/null; then
         echo "Clone successful!"
