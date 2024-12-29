@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo apt -y install ripgrep pavucontrol xclip jq tldr shutter python3-pip eza fzf wget curl
+sudo apt -y install ripgrep pavucontrol wl-clipboard jq tldr shutter python3-pip eza fzf wget curl
