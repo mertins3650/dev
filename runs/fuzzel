@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
 sudo apt -y install fuzzel
-ln -s "$HOME/dev/dotfiles/fuzzel" "$HOME/.config/fuzzel"
