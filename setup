@@ -8,6 +8,7 @@ if $RUNNING_GNOME; then
 fi
 
 sudo apt-get update >/dev/null 2>&1
+mkdir -p $HOME/personal
 
 cd /tmp
 GUM_VERSION="0.14.3" 
