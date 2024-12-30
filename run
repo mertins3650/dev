@@ -29,27 +29,39 @@ log() {
     fi
 }
 
-log "RUN: env: $env -- grep: $grep"
+log "RUN: grep: $grep, dry_run: $dry_run"
 
-runs_dir=$(find "$script_dir/runs" -mindepth 1 -maxdepth 1 -executable | sort)
+# Find scripts in subdirectories first
+sub_dir_scripts=$(find "$script_dir/runs" -mindepth 2 -type f -executable | sort)
 
-if [[ -n "$grep" ]]; then
-    for s in $runs_dir; do
-        if [[ "$s" == *"$grep"* ]]; then
-            log "running script: $s"
+# Find scripts directly in the root of "runs"
+root_scripts=$(find "$script_dir/runs" -mindepth 1 -maxdepth 1 -type f -executable | sort)
+
+# Function to execute scripts
+execute_scripts() {
+    local scripts="$1"
+    for s in $scripts; do
+        if [[ -n "$grep" ]]; then
+            if [[ "$s" == *"$grep"* ]]; then
+                log "Running script: $s"
+                if [[ $dry_run == "0" ]]; then
+                    "$s"
+                fi
+            else
+                log "grep \"$grep\" filtered out $s"
+            fi
+        else
+            log "Running script: $s"
             if [[ $dry_run == "0" ]]; then
                 "$s"
             fi
-        else
-            log "grep \"$grep\" filtered out $s"
         fi
     done
-else
-    for s in $runs_dir; do
-        log "running script: $s"
-        if [[ $dry_run == "0" ]]; then
-            "$s"
-        fi
-    done
-fi
+}
+
+# Execute subdirectory scripts first
+execute_scripts "$sub_dir_scripts"
+
+# Then execute root scripts
+execute_scripts "$root_scripts"
 

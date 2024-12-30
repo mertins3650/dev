@@ -11,5 +11,3 @@ nvm install 22
 sudo NVM_DIR="$HOME/.nvm" /bin/bash -c "source $NVM_DIR/nvm.sh && npm install -g typescript-language-server typescript"
 sudo NVM_DIR="$HOME/.nvm" /bin/bash -c "source $NVM_DIR/nvm.sh && npm install -g prettier"
 
-#bun
-curl -fsSL https://bun.sh/install | bash
