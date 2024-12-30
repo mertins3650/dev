@@ -46,12 +46,14 @@ else
     exit 0
 fi
 
-answer2=$(gum choose "Yes" "No" --height 10 --header "Install apps?")
+answer2=$(gum choose "Yes" "No" --height 10 --header "Run initial setup?")
 if [[ "${answer2}" == "Yes" ]]; then
-    if [[ -x "$HOME/dev/run" ]]; then
-        "$HOME/dev/run"
+    if [[ -d "$HOME/dev/run" && -x "$HOME/dev/run" ]]; then
+        for script in "$HOME/dev/run/first"*; do
+            source "$script"
+        done
     else
-        echo "Error: $HOME/dev/run is not executable or does not exist."
+        echo "Error: '$HOME/dev/run' is not a valid executable directory."
         exit 1
     fi
 else
@@ -78,7 +80,7 @@ if $RUNNING_GNOME; then
   gsettings set org.gnome.desktop.session idle-delay 300
 fi
 
-answer4=$(gum choose "Yes" "No" --height 10 --header "Reboot?")
+answer4=$(gum choose "Yes" "No" --height 10 --header "Reboot?\n\nRun setup2 after boot")
 if [[ "${answer4}" == "Yes" ]]; then
     reboot
 else
