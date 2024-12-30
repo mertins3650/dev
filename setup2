@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
+    gsettings set org.gnome.desktop.screensaver lock-enabled false
+    gsettings set org.gnome.desktop.session idle-delay 0
+fi
+
+sudo apt-get update >/dev/null 2>&1
+
+root_scripts=()
+if [[ -d "$HOME/dev/runs" ]]; then
+    while IFS= read -r script; do
+        root_scripts+=("$script")
+    done < <(find "$HOME/dev/runs" -mindepth 1 -maxdepth 1 -type f -executable | sort)
+else
+    echo "Directory $HOME/dev/runs does not exist or is empty."
+    exit 1
+fi
+
+if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
+    gsettings set org.gnome.desktop.screensaver lock-enabled true
+    gsettings set org.gnome.desktop.session idle-delay 300
+fi
+
+execute_scripts() {
+    local scripts=("$@")
+    for s in "${scripts[@]}"; do
+        echo "Running script: $s"
+        "$s"
+    done
+}
+
+execute_scripts "${root_scripts[@]}"
