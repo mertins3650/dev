@@ -35,6 +35,7 @@ exec_always swayidle -w \
 bindsym $mod+Mod1+l exec swaylock --image $HOME/dev/misc/backgrounds/shaded_landscape.png 
 
 ### Key bindings
+
     #Screen/audio control
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
     bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
