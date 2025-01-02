@@ -81,4 +81,4 @@ if $RUNNING_GNOME; then
     gsettings set org.gnome.desktop.session idle-delay 300
 fi
 
-echo "Restart terminal and run setup2"
+echo "Restart terminal and run postsetup"
