@@ -10,6 +10,13 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
+		completion = {
+			menu = {
+				draw = {
+					columns = { { "label", "label_description", gap = 1 }, { "kind" } },
+				},
+			},
+		},
 		signature = { enabled = true },
 	},
 }
