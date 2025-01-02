@@ -8,7 +8,6 @@ set $up k
 set $right l
 #Standard apps
 set $term $HOME/.local/bin/ghostty
-#set $term /home/simonmertins/.local/bin/ghostty
 set $menu exec fuzzel
 
 #input options
