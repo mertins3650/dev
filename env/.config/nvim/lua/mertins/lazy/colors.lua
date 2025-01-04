@@ -1,4 +1,5 @@
 function ColorMyPencils(color)
+	--color = color or "kanagawa"
 	color = color or "catppuccin"
 	--color = color or "rose-pine-moon"
 	--color = color or "tokyonight"
@@ -31,6 +32,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
+				flavor = "mocha",
 				transparent_background = true,
 				no_italic = false,
 				styles = {
@@ -54,6 +56,16 @@ return {
 					keyword = { italic = false },
 				},
 			})
+			ColorMyPencils()
+		end,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kanagawa").setup({})
 			ColorMyPencils()
 		end,
 	},

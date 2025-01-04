@@ -35,6 +35,12 @@ exec_always swayidle -w \
 bindsym $mod+Mod1+l exec swaylock --image $HOME/dev/misc/backgrounds/shaded_landscape.png 
 
 ### Key bindings
+# Full screen screenshot
+bindsym Print exec grim ~/Pictures/screenshot-$(date +%Y-%m-%d-%H%M%S).png
+
+# Select area screenshot
+bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%Y-%m-%d-%H%M%S).png
+
 
     #Screen/audio control
     bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
