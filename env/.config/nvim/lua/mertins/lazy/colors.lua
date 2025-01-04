@@ -1,7 +1,7 @@
 function ColorMyPencils(color)
-	-- color = color or "catppuccin"
-	--	color = color or "rose-pine"
-	color = color or "rose-pine-moon"
+	color = color or "catppuccin"
+	--color = color or "rose-pine-moon"
+	--color = color or "tokyonight"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -51,7 +51,6 @@ return {
 			require("tokyonight").setup({
 				style = "moon",
 				styles = {
-					comments = { italic = false },
 					keyword = { italic = false },
 				},
 			})
