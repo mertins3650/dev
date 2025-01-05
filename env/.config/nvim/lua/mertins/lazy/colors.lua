@@ -1,8 +1,6 @@
 function ColorMyPencils(color)
-	--color = color or "kanagawa"
 	color = color or "catppuccin"
 	--color = color or "rose-pine-moon"
-	--color = color or "tokyonight"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -41,31 +39,6 @@ return {
 					keywords = {},
 				},
 			})
-			ColorMyPencils()
-		end,
-	},
-	{
-		"folke/tokyonight.nvim",
-		name = "tokyonight",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup({
-				style = "moon",
-				styles = {
-					keyword = { italic = false },
-				},
-			})
-			ColorMyPencils()
-		end,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		name = "kanagawa",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("kanagawa").setup({})
 			ColorMyPencils()
 		end,
 	},
