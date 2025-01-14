@@ -1,7 +1,7 @@
 return {
 	"saghen/blink.cmp",
+	version = "*",
 	dependencies = "rafamadriz/friendly-snippets",
-	version = "v0.*",
 	opts = {
 		appearance = {
 			use_nvim_cmp_as_default = true,
@@ -19,4 +19,5 @@ return {
 		},
 		signature = { enabled = true },
 	},
+	opts_extend = { "sources.default" },
 }
