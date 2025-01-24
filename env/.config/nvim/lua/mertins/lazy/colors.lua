@@ -1,3 +1,13 @@
+return {
+	{
+		"tjdevries/colorbuddy.nvim",
+		config = function()
+			vim.cmd.colorscheme("gruvbuddy")
+		end,
+	},
+}
+
+--[[
 function ColorMyPencils(color)
 	color = color or "catppuccin"
 	--color = color or "rose-pine-moon"
@@ -43,3 +53,4 @@ return {
 		end,
 	},
 }
+]]
