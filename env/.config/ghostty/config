@@ -1,8 +1,8 @@
 shell-integration-features = no-cursor,no-sudo,title
 window-padding-color = background
 window-decoration = false
-#theme = catppuccin-mocha
-theme = Kanagawa Wave
+theme = catppuccin-mocha
+background = 111111
 command = tmux
 font-size = 15
 font-feature = -liga
