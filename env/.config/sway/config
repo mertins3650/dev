@@ -7,7 +7,7 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 #MOD = SUPER
 set $mod Mod4
-exec_always --no-startup-id $HOME/.local/scripts/autotiling
+#exec_always --no-startup-id $HOME/.local/scripts/autotiling
 # Home row direction keys, like vim
 set $left h
 set $down j
