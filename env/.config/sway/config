@@ -5,7 +5,6 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
-#MOD = SUPER
 set $mod Mod4
 #exec_always --no-startup-id $HOME/.local/scripts/autotiling
 # Home row direction keys, like vim
@@ -26,10 +25,7 @@ input "type:pointer" accel_profile flat
 #??
 include /etc/sway/config-vars.d/*
 
-#Display options
 output * bg $HOME/dev/misc/backgrounds/shaded_landscape.png fill
-#gaps inner 5
-#gaps outer 5
 default_border pixel 4
 bindsym $mod+Shift+f exec swaymsg output eDP-1 enable
 bindsym $mod+Shift+d exec swaymsg output eDP-1 disable
