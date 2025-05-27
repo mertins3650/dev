@@ -1,0 +1,109 @@
+@import "mocha.css";
+
+* {
+  font-family: "CaskaydiaMono Nerd Font";
+  font-size: 16px;
+  font-weight: 800;
+}
+
+window#waybar {
+  background-color: #1a1b26;
+  color: #fdf6e3;
+}
+
+#clock,
+#battery,
+#cpu,
+#workspaces button,
+#workspaces button:hover,
+#workspaces button.visible,
+#workspaces button.active,
+#workspaces button.active:hover,
+#workspaces button.urgent,
+#window,
+#memory,
+#network,
+#scratchpad,
+#temperature,
+#pulseaudio,
+#backlight {
+  background: #24283b;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin: 3px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#workspaces button,
+#workspaces button:hover,
+#workspaces button.visible,
+#workspaces button.active,
+#workspaces button.active:hover,
+#workspaces button.urgent {
+  padding: 0 2px;
+}
+
+#workspaces button.focused {
+  background: @green;
+  color: @base;
+}
+#workspaces button.active {
+  background: @green;
+  color: @base;
+}
+
+#workspaces button.urgent {
+  background: @red;
+}
+
+#workspaces button.active:hover {
+  background: @sky;
+  color: @base;
+}
+
+#workspaces button:hover {
+  background: @sky;
+  color: @base;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+#backlight {
+    color: @peach;
+}
+
+#cpu {
+    color: @rosewater;
+}
+
+#temperature {
+    color: @yellow;
+}
+
+#network {
+    color: @lavender;
+}
+
+#pulseaudio {
+  color: @maroon;
+}
+
+#clock {
+  color: @mauve;
+}
+
+.modules-left,
+.modules-right,
+.modules-center {
+  padding: 5px 0px;
+}

@@ -1,0 +1,12 @@
+shell-integration-features = no-cursor,no-sudo,title
+window-padding-color = background
+window-decoration = false
+theme = catppuccin-mocha
+#background = 111111
+command = tmux
+font-size = 16
+font-feature = -calt, -liga, -dlig
+font-family = "CaskaydiaCove Nerd Font Mono"
+background-opacity = 0.9
+
+keybind = ctrl+shift+r=reload_config
