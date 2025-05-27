@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu pavucontrol brightnessctl wl-clipboard --noconfirm --needed

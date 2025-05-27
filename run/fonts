@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu  	ttf-font-awesome ttf-cascadia-code-nerd --noconfirm --needed

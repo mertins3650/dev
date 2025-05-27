@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu nodejs pnpm --noconfirm --needed
