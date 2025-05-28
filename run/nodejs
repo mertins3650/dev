@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-paru -Syu nodejs npm pnpm --noconfirm --needed
+paru -Syu prettierd nodejs npm pnpm --noconfirm --needed

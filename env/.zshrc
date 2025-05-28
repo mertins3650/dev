@@ -5,6 +5,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR="nvim"
+export DEV_ENV="$HOME/dev"
 
 HISTSIZE=10000
 SAVEHIST=10000

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu fzf ghostty --noconfirm --needed

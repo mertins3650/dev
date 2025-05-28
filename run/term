@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-paru -Syu fzf ghostty eza zoxide --noconfirm --needed

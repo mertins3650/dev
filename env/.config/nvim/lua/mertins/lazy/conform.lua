@@ -32,6 +32,7 @@ return {
 				lua = { "stylua" },
 				javascript = { "prettierd" },
 				typescript = { "prettierd" },
+				typescriptreact = { "prettierd" },
 				go = { "gofmt" },
 				html = { "prettierd" },
 				astro = { "prettierd" },

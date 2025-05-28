@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu docker docker-compose --noconfirm --needed

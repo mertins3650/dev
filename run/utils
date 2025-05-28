@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-paru -Syu pavucontrol brightnessctl wl-clipboard --noconfirm --needed
+paru -Syu feh ripgrep eza zoxide pavucontrol brightnessctl wl-clipboard --noconfirm --needed
