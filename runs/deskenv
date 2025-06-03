@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-paru -Syu wofi zen-browser-bin hyprland hyprpaper hypridle hyprlock hyprshot swaync waybar --noconfirm --needed
+paru -Syu wofi hyprland hyprpaper hypridle hyprlock hyprshot swaync waybar --noconfirm --needed

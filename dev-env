@@ -66,4 +66,12 @@ update_files $DEV_ENV/env/.local $HOME/.local
 copy $DEV_ENV/env/.zshrc $HOME/.zshrc
 copy $DEV_ENV/dev-env $HOME/.local/scripts/dev-env
 
-hyprctl reload
+if [[ "$XDG_CURRENT_DESKTOP" == "Hyprland" ]] || pgrep -x Hyprland > /dev/null; then
+    log "Reloading Hyprland config: hyprctl reload"
+    if [[ $dry_run == "0" ]]; then
+        hyprctl reload
+    fi
+else
+    log "Hyprland is not running, skipping hyprctl reload"
+fi
+

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu nwg-look catppuccin-gtk-theme-mocha --noconfirm --needed
