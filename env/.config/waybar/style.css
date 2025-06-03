@@ -1,4 +1,5 @@
-@import "mocha.css";
+/* @import "mocha.css"; */
+@import "tokyonight.css";
 
 * {
   font-family: "CaskaydiaCove Nerd Font Mono";
@@ -7,8 +8,8 @@
 }
 
 window#waybar {
-  background-color: #1a1b26;
-  color: #fdf6e3;
+  background-color: @bg;
+  color: @bgcolor;
 }
 
 #clock,
@@ -27,7 +28,7 @@ window#waybar {
 #temperature,
 #pulseaudio,
 #backlight {
-  background: #24283b;
+  background: @bgbacklight;
   padding: 3px 10px;
   border-radius: 5px;
   margin: 3px;
@@ -45,61 +46,61 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  background: @green;
-  color: @base;
+  background: @wsactive;
+  color: @basefont;
 }
 #workspaces button.active {
-  background: @green;
-  color: @base;
+  background: @wsactive;
+  color: @basefont;
 }
 
 #workspaces button.urgent {
-  background: @red;
+  background: @wsurgent;
 }
 
 #workspaces button.active:hover {
-  background: @sky;
-  color: @base;
+  background: @wshover;
+  color: @basefont;
 }
 
 #workspaces button:hover {
-  background: @sky;
-  color: @base;
+  background: @wshover;
+  color: @basefont;
 }
 
 #battery {
-  color: @green;
+  color: @battery;
 }
 
 #battery.charging {
-  color: @green;
+  color: @battery;
 }
 
 #battery.warning:not(.charging) {
-  color: @red;
+  color: @batterywarning;
 }
 #backlight {
-    color: @peach;
+    color: @backlight;
 }
 
 #cpu {
-    color: @rosewater;
+    color: @cpu;
 }
 
 #temperature {
-    color: @yellow;
+    color: @temp;
 }
 
 #network {
-    color: @lavender;
+    color: @network;
 }
 
 #pulseaudio {
-  color: @maroon;
+  color: @audio;
 }
 
 #clock {
-  color: @mauve;
+  color: @clock;
 }
 
 .modules-left,

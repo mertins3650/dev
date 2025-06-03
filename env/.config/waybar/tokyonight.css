@@ -1,0 +1,15 @@
+@define-color bg #011628;
+@define-color bgcolor #fdf6e3;
+@define-color bgbacklight #24283b;
+@define-color basefont #1e1e2e;
+@define-color wsactive #9ece6a;
+@define-color wsurgent #db4b4b;
+@define-color wshover #7aa2f7;
+@define-color battery #1abc9c;
+@define-color batterywarning #394f6e;
+@define-color backlight #2ac3de;
+@define-color cpu #ff9e64;
+@define-color temp #e0af68;
+@define-color network #f7768e;
+@define-color audio #73daca;
+@define-color clock #9d7cd8;
