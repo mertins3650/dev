@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-paru -Syu curl jq pacman-contrib lsof feh ripgrep eza zoxide pavucontrol brightnessctl wl-clipboard --noconfirm --needed
+paru -Syu prettierd curl jq pacman-contrib lsof feh ripgrep eza zoxide pavucontrol brightnessctl wl-clipboard --noconfirm --needed
