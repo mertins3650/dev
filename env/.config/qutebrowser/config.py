@@ -100,6 +100,7 @@ config.load_autoconfig() # load settings done via the gui
 c.auto_save.session = True # save tabs on quit/restart
 
 # keybinding changes
+config.bind('=', 'cmd-set-text :open {url}')
 config.bind('h', 'history')
 config.bind('cs', 'cmd-set-text -s :config-source')
 config.bind('tH', 'config-cycle tabs.show multiple never')

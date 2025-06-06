@@ -1,12 +1,12 @@
 shell-integration-features = no-cursor,no-sudo,title
 window-padding-color = background
 window-decoration = false
+# theme = rose-pine
 theme = tokyonight_moon
 # theme = catppuccin-mocha
-background = 011628
-# background = 111111
+background = 111111
 command = tmux
-font-size = 16
+font-size = 19
 font-feature = -calt, -liga, -dlig
 font-family = "CaskaydiaCove Nerd Font Mono"
 # background-opacity = 0.95

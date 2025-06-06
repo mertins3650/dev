@@ -1,15 +1,29 @@
-function ColorMyPencils(color)
-	-- color = color or "rose-pine-moon"
-	-- color = color or "catppuccin-mocha"
-	color = color or "tokyonight"
-	vim.cmd.colorscheme(color)
+-- local theme = "vague"
+local theme = "tokyonight"
+-- local theme = "rose-pine"
+-- local theme = "catppuccin"
 
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+function ColorMyPencils(color)
+	vim.cmd.colorscheme(color or theme)
 end
 
-return {
-	{
+local themes = {
+	vague = {
+		"vague2k/vague.nvim",
+		name = "vague",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("vague").setup({
+				transparent = true,
+				style = {
+					strings = "none",
+				},
+			})
+			ColorMyPencils()
+		end,
+	},
+	tokyonight = {
 		"folke/tokyonight.nvim",
 		name = "tokyonight",
 		lazy = false,
@@ -25,6 +39,7 @@ return {
 			local fg_gutter = "#627E97"
 			local border = "#547998"
 			require("tokyonight").setup({
+				transparent = true,
 				style = "night",
 				on_colors = function(colors)
 					colors.bg = bg
@@ -50,13 +65,14 @@ return {
 			ColorMyPencils()
 		end,
 	},
-	{
+	["rose-pine"] = {
 		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			require("rose-pine").setup({
+				variant = "moon",
 				styles = {
 					transparency = true,
 					italic = false,
@@ -65,13 +81,14 @@ return {
 			ColorMyPencils()
 		end,
 	},
-	{
+	catppuccin = {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
+				flavor = "mocha",
 				transparent_background = true,
 				no_italic = false,
 				styles = {
@@ -84,3 +101,6 @@ return {
 		end,
 	},
 }
+
+-- Only return the active theme's plugin spec
+return { themes[theme] }
