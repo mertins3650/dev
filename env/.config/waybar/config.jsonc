@@ -38,6 +38,7 @@
     "pulseaudio",
     "backlight",
     "temperature",
+        "memory",
     "cpu",
     "network"
   ],
