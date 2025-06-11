@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-paru -Syu zen-browser-bin --noconfirm --needed
