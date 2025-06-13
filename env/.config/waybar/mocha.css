@@ -3,13 +3,13 @@
 @define-color bgbacklight #24283b;
 @define-color basefont #1e1e2e;
 @define-color batterywarning #f38ba8;
-/* @define-color battery #a6e3a1; */
-/* @define-color backlight #fab387; */
-/* @define-color cpu #f5e0dc; */
-/* @define-color temp #f9e2af; */
-/* @define-color network #b4befe; */
-/* @define-color audio #eba0ac; */
-/* @define-color clock #cba6f7; */
+@define-color battery #a6e3a1;
+@define-color backlight #fab387;
+@define-color cpu #f5e0dc;
+@define-color temp #f9e2af;
+@define-color network #b4befe;
+@define-color audio #eba0ac;
+@define-color clock #cba6f7;
 
 /* @define-color wsactive #a6e3a1; */
 /* @define-color wsurgent #f38ba8; */
@@ -20,10 +20,10 @@
 @define-color wsurgent  #f38ba8;  /* Red for urgent */
 
 
-@define-color battery #ffffff;
-@define-color backlight #ffffff;
-@define-color cpu #ffffff;
-@define-color temp #ffffff;
-@define-color network #ffffff;
-@define-color audio #ffffff;
-@define-color clock #ffffff;
+/* @define-color battery #ffffff; */
+/* @define-color backlight #ffffff; */
+/* @define-color cpu #ffffff; */
+/* @define-color temp #ffffff; */
+/* @define-color network #ffffff; */
+/* @define-color audio #ffffff; */
+/* @define-color clock #ffffff; */

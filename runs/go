@@ -19,6 +19,7 @@ install_go_binary() {
     fi
 }
 
+install_go_binary go-blueprint go install github.com/melkeydev/go-blueprint@latest
 install_go_binary air github.com/air-verse/air@latest
 install_go_binary sqlc github.com/sqlc-dev/sqlc/cmd/sqlc@latest
 install_go_binary goose github.com/pressly/goose/v3/cmd/goose@latest
