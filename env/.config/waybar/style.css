@@ -1,4 +1,5 @@
-@import "mocha.css";
+/* @import "mocha.css"; */
+@import "tokyonight.css";
 
 * {
   font-family: "CaskaydiaCove Nerd Font Mono";

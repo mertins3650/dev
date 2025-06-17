@@ -1,28 +1,11 @@
--- local theme = "vague"
--- local theme = "tokyonight"
--- local theme = "rose-pine"
-local theme = "catppuccin"
+local theme = "tokyonight"
+-- local theme = "catppuccin"
 
 function ColorMyPencils(color)
 	vim.cmd.colorscheme(color or theme)
 end
 
 local themes = {
-	vague = {
-		"vague2k/vague.nvim",
-		name = "vague",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("vague").setup({
-				transparent = true,
-				style = {
-					strings = "none",
-				},
-			})
-			ColorMyPencils()
-		end,
-	},
 	tokyonight = {
 		"folke/tokyonight.nvim",
 		name = "tokyonight",
@@ -65,22 +48,6 @@ local themes = {
 			ColorMyPencils()
 		end,
 	},
-	["rose-pine"] = {
-		"rose-pine/neovim",
-		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("rose-pine").setup({
-				variant = "moon",
-				styles = {
-					transparency = true,
-					italic = false,
-				},
-			})
-			ColorMyPencils()
-		end,
-	},
 	catppuccin = {
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -102,5 +69,4 @@ local themes = {
 	},
 }
 
--- Only return the active theme's plugin spec
 return { themes[theme] }
