@@ -54,15 +54,44 @@ local themes = {
 		lazy = false,
 		priority = 1000,
 		config = function()
+			local bg = "#011628"
+			local bg_dark = "#011423"
+			local bg_highlight = "#143652"
+			local bg_search = "#0A64AC"
+			local bg_visual = "#275378"
+			local fg = "#CBE0F0"
+			local fg_dark = "#B4D0E9"
+			local fg_gutter = "#627E97"
+			local border = "#547998"
+
 			require("catppuccin").setup({
 				flavor = "mocha",
-				transparent_background = true,
 				no_italic = false,
 				styles = {
 					conditionals = {},
 					miscs = {},
 					keywords = {},
 				},
+				custom_highlights = function(_)
+					return {
+						Normal = { bg = bg, fg = fg },
+						NormalNC = { bg = bg_dark, fg = fg_dark },
+						NormalFloat = { bg = bg_dark, fg = fg },
+						FloatBorder = { bg = bg_dark, fg = border },
+						FloatTitle = { bg = bg_dark, fg = border },
+						Pmenu = { bg = bg_dark, fg = fg },
+						PmenuSel = { bg = bg_highlight, fg = fg },
+						PmenuSbar = { bg = bg_dark },
+						PmenuThumb = { bg = bg_highlight },
+						Visual = { bg = bg_visual },
+						Search = { bg = bg_search, fg = fg },
+						LineNr = { fg = fg_gutter, bg = bg_dark },
+						SignColumn = { bg = bg_dark },
+						StatusLine = { bg = bg_dark, fg = fg },
+						WinSeparator = { fg = border, bg = bg_dark },
+						VertSplit = { fg = border, bg = bg_dark },
+					}
+				end,
 			})
 			ColorMyPencils()
 		end,
