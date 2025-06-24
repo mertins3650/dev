@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu opencode-bin --noconfirm --needed
