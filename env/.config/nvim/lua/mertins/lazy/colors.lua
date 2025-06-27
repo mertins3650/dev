@@ -54,23 +54,14 @@ local themes = {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local bg = "#111111"
-			local bg_dark = "#1e1e2e"
-
 			require("catppuccin").setup({
+				transparent_background = true,
 				flavor = "mocha",
 				no_italic = false,
 				styles = {
 					conditionals = {},
 					miscs = {},
 					keywords = {},
-				},
-				color_overrides = {
-					mocha = {
-						base = bg,
-						mantle = bg_dark,
-						crust = bg_dark,
-					},
 				},
 			})
 			ColorMyPencils()

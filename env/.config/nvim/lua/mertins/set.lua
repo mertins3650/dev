@@ -1,4 +1,4 @@
-vim.opt.winhighlight = "NormalNC:NormalFloat"
+-- vim.opt.winhighlight = "NormalNC:NormalFloat"
 vim.opt.guicursor = ""
 vim.g.have_nerd_font = false
 vim.opt.relativenumber = true
