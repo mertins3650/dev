@@ -2,31 +2,53 @@
   "layer": "top",
   "position": "top",
   "height": 40,
-
- //  "modules-left": [
- //    "sway/workspaces",
- //    "sway/window"
- //  ],
- //  "sway/workspaces": {
- //    "format": " {icon} ",
- //  },
- // "sway/window": {
- //    "format": "{app_id}",
- //    "separate-outputs": true,
- //    "icon":true
- //  },
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
   ],
+     "hyprland/workspaces": {
+      "on-click": "activate",
+      "format": " {icon} ",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+      },
+      "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": []
+      }
+    },
     "hyprland/workspaces": {
       "format": " {icon} ",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4"
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+        },
     },
       "hyprland/window": {
           "format": "{class}",
           "separate-outputs": true,
           "icon":true,
           "rewrite": {
+              "org.qutebrowser.qutebrowser": "qutebrowser",
               "zen-beta": "Zen browser",
               "com.mitchellh.ghostty": "Ghostty",
               "org.gnome.Nautilus": "Nautilus",
