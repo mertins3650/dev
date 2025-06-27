@@ -1,110 +1,74 @@
-@import "mocha.css";
-/* @import "tokyonight.css"; */
-
 * {
-  font-family: "CaskaydiaCove Nerd Font Mono";
+  background-color: #181824;
+}
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: CaskaydiaMono Nerd Font;
   font-size: 16px;
   font-weight: 800;
 }
 
-window#waybar {
-  /* background-color: #000000; */
-  background-color: #181825;
-  color: @bgcolor;
+#workspaces {
+  margin-left: 7px;
 }
 
-#clock,
-#battery,
-#cpu,
-#workspaces button,
-#workspaces button:hover,
-#workspaces button.visible,
-#workspaces button.active,
-#workspaces button.active:hover,
-#workspaces button.urgent,
-#window,
-#memory,
-#network,
-#scratchpad,
-#temperature,
-#pulseaudio,
-#backlight {
-  padding: 3px 10px;
-  border-radius: 5px;
-  margin: 3px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+#workspaces button {
+  all: initial;
+  padding: 2px 6px;
+  margin-top: 3px;
+  margin-right: 3px;
+  color: #313244;
 }
 
-#workspaces button,
-#workspaces button:hover,
-#workspaces button.visible,
-#workspaces button.active,
-#workspaces button.active:hover,
-#workspaces button.urgent {
-  padding: 0 2px;
-}
-
-#workspaces button.focused {
-  background: @wsactive;
-  color: @basefont;
-}
 #workspaces button.active {
-  background: @wsactive;
-  color: #ffffff;
+  color: #f2cdcd;
+    font-weight: 900;
 }
 
-#workspaces button.urgent {
-  background: @wsurgent;
+
+#custom-dropbox,
+#cpu,
+#power-profiles-daemon,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#clock {
+  min-width: 12px;
+  margin-right: 13px;
+  margin-top: 3px;
 }
 
-#workspaces button.active:hover {
-  background: @wshover;
-  color: @basefont;
+tooltip {
+  padding: 2px;
 }
 
-#workspaces button:hover {
-  background: @wshover;
-  color: @basefont;
-}
-
-#battery {
-  color: @battery;
-}
-
-#battery.charging {
-  color: @battery;
-}
-
-#battery.warning:not(.charging) {
-  color: @batterywarning;
-}
-#backlight {
-    color: @backlight;
-}
-
-#cpu {
-    color: @cpu;
-}
-
-#temperature {
-    color: @temp;
-}
-
-#network {
-    color: @network;
-}
-
-#pulseaudio {
-  color: @audio;
+tooltip label {
+  padding: 2px;
 }
 
 #clock {
-  color: @clock;
+ color: #cba6f7;
 }
 
-.modules-left,
-.modules-right,
-.modules-center {
-  padding: 5px 0px;
+#bluetooth {
+    color: #89b4fa;
+}
+
+#network {
+    color: #eba0ac;
+}
+
+#pulseaudio {
+    color: #fab387;
+}
+
+#cpu {
+    color: #f9e2af;
+}
+
+#battery {
+    color: #a6e3a1;
 }
