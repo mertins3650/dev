@@ -15,7 +15,6 @@
       "network",
       "pulseaudio",
       "cpu",
-      "power-profiles-daemon",
       "battery"
     ],
     "hyprland/workspaces": {
@@ -99,15 +98,5 @@
       "tooltip-format": "Playing at {volume}%",
       "on-click-right": "pamixer -t",
       "ignored-sinks": ["Easy Effects Sink"]
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}",
-      "tooltip": true,
-      "format-icons": {
-        "power-saver": "󰡳",
-        "balanced":     "󰊚",
-        "performance":  "󰡴"
-      }
     },
 }
