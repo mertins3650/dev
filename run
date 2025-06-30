@@ -11,6 +11,17 @@ export DEV_ENV="$DEV_ENV"
 grep=""
 dry_run="0"
 
+pacman -Q git &>/dev/null || sudo pacman -Syu --noconfirm --needed git
+sudo pacman -Syu base-devel --noconfirm --needed
+
+if ! command -v paru &>/dev/null; then
+  git clone https://aur.archlinux.org/paru.git
+  cd paru
+  makepkg -si --noconfirm
+  cd ~
+  rm -rf paru
+fi
+
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --dry)

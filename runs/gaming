@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-paru -Syu steam bottles --noconfirm --needed
+paru -Syu steam --noconfirm --needed

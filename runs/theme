@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-paru -Syu nwg-look catppuccin-gtk-theme-mocha --noconfirm --needed
+paru -Syu kvantum-qt5 --noconfirm --needed
+
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"

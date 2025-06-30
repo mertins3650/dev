@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-paru -Syu go nodejs npm pnpm postgresql postgresql-libs llvm clang cargo  --noconfirm --needed
+raru -Syu opencode-bin go nodejs npm pnpm postgresql postgresql-libs llvm clang cargo  --noconfirm --needed
 
 # Function to install a Go binary if not already installed
 install_go_binary() {
