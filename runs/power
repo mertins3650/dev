@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+paru -Syu power-profiles-daemon tlp --noconfirm --needed

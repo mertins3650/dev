@@ -99,4 +99,14 @@
       "on-click-right": "pamixer -t",
       "ignored-sinks": ["Easy Effects Sink"]
     },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}",
+      "tooltip": true,
+      "format-icons": {
+        "power-saver": "󰡳",
+        "balanced":     "󰊚",
+        "performance":  "󰡴"
+      }
+    }
 }

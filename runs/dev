@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-# Install Go if not already installed
-paru -Syu go --noconfirm --needed
+paru -Syu go nodejs npm pnpm postgresql postgresql-libs llvm clang cargo  --noconfirm --needed
 
 # Function to install a Go binary if not already installed
 install_go_binary() {
