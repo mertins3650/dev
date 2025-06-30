@@ -70,3 +70,23 @@ if [[ $found -eq 0 ]]; then
     log "No script matched \"$grep\""
 fi
 
+current_shell="$(getent passwd "$USER" | cut -d: -f7)"
+
+if [[ "$current_shell" != *"zsh" ]]; then
+    log "Default shell is not zsh (currently: $current_shell). Changing to zsh..."
+    if [[ $dry_run == "0" ]]; then
+        if command -v zsh &>/dev/null; then
+            chsh -s "$(command -v zsh)"
+            log "Default shell changed to zsh. Please log out and log back in for changes to take effect."
+        else
+            log "zsh is not installed. Installing zsh..."
+            sudo pacman -Syu --noconfirm --needed zsh
+            chsh -s "$(command -v zsh)"
+            log "Default shell changed to zsh. Please log out and log back in for changes to take effect."
+        fi
+    else
+        log "[DRY_RUN]: Would change default shell to zsh"
+    fi
+else
+    log "Default shell is already zsh."
+fi
