@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 paru -Syu opencode-bin go nodejs npm pnpm postgresql postgresql-libs llvm clang cargo  --noconfirm --needed
 
-# Function to install a Go binary if not already installed
 install_go_binary() {
     local binary=$1
     local package=$2
 
-    # Determine install path (default to ~/go/bin if GOBIN not set)
     local gobin="${GOBIN:-$HOME/go/bin}"
 
     if command -v "$binary" >/dev/null 2>&1; then
