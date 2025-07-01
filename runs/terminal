@@ -1,8 +1,2 @@
 #!/usr/bin/env bash
 paru -Syu fzf zsh ghostty curl jq pacman-contrib ripgrep eza zoxide  --noconfirm --needed
-
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-else
-    echo "Oh My Zsh is already installed"
-fi
