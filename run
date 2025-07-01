@@ -15,11 +15,13 @@ pacman -Q git &>/dev/null || sudo pacman -Syu --noconfirm --needed git
 sudo pacman -Syu base-devel --noconfirm --needed
 
 if ! command -v paru &>/dev/null; then
+  cd ~
   git clone https://aur.archlinux.org/paru.git
   cd paru
   makepkg -si --noconfirm
   cd ~
   rm -rf paru
+  cd dev
 fi
 
 while [[ $# -gt 0 ]]; do
