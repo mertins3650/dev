@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-paru -Syu wofi fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool mako hyprland hyprpaper hypridle hyprpolkitagent hyprland-qtutils hyprlock hyprshot waybar xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm --needed
+paru -Syu wofi mako hyprland hyprpaper hypridle hyprpolkitagent hyprland-qtutils hyprlock hyprshot waybar xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm --needed
