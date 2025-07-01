@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-yay -S --noconfirm --needed docker docker-compose
+paru -Syu --noconfirm --needed docker docker-compose
 
 echo '{"log-driver":"json-file","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json
 

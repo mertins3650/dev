@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-paru -Syu prettierd lsof feh pavucontrol brightnessctl nautilus wl-clipboard --noconfirm --needed
+paru -Syu linux-headers prettierd lsof feh pavucontrol brightnessctl nautilus wl-clipboard --noconfirm --needed
