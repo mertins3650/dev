@@ -1,5 +1,5 @@
--- local theme = "tokyonight"
-local theme = "catppuccin"
+local theme = "tokyonight"
+-- local theme = "catppuccin"
 
 function ColorMyPencils(color)
 	vim.cmd.colorscheme(color or theme)
