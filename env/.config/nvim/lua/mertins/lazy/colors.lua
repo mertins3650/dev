@@ -22,7 +22,6 @@ local themes = {
 			local fg_gutter = "#627E97"
 			local border = "#547998"
 			require("tokyonight").setup({
-				transparent = true,
 				style = "night",
 				on_colors = function(colors)
 					colors.bg = bg
