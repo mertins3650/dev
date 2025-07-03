@@ -1,6 +1,7 @@
 # My Dotfiles
 
-This repository contains my personal dotfiles and scripts for managing my development environment.
+This repository contains my personal dotfiles.
+Run this on a fresh Arch Linux installation to setup.
 
 ## Structure
 
@@ -15,9 +16,9 @@ This repository contains my personal dotfiles and scripts for managing my develo
 To use these dotfiles, you can clone this repository and then run `dev-env` & `run`.
 
 ```bash
-cd 
 git clone https://github.com/mertins3650/dev.git
 cd dev
+export DEV_ENV=$(pwd)
 ./dev-env
 ./run
 ```
