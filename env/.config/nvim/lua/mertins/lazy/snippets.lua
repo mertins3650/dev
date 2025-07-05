@@ -57,7 +57,7 @@ vim.keymap.set({ "i", "s" }, "<C-k>", function()
 	return require("luasnip").change_choice(-1)
 end, { silent = true })
 
-vim.keymap.set("n", "<leader><leader>s", function()
+vim.keymap.set("n", "<leader>ls", function()
 	for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/mertins/snippets/*.lua", true)) do
 		dofile(ft_path)
 	end
