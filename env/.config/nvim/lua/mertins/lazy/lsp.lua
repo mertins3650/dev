@@ -20,7 +20,6 @@ return {
 		},
 		config = function()
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			local lspconfig = require("lspconfig")
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -31,22 +30,25 @@ return {
 					end
 
 					map("gd", function()
-						Snacks.picker.lsp_definitions()
+						vim.lsp.buf.definition()
 					end, "[G]oto [D]efinition")
+					map("K", function()
+						vim.lsp.buf.hover()
+					end, "Hover")
 					map("gr", function()
-						Snacks.picker.lsp_references()
+						vim.lsp.buf.references()
 					end, "[G]oto [R]eferences")
 					map("gI", function()
-						Snacks.picker.lsp_implementations()
+						vim.lsp.buf.implementation()
 					end, "[G]oto [I]mplementation")
 					map("<leader>D", function()
-						Snacks.picker.lsp_type_definitions()
+						vim.lsp.buf.type_definition()
 					end, "Type [D]efinition")
 					map("<leader>ds", function()
-						Snacks.picker.lsp_symbols()
+						vim.lsp.buf.document_symbol()
 					end, "[D]ocument [S]ymbols")
 					map("<leader>ws", function()
-						Snacks.picker.lsp_workspace_symbols()
+						vim.lsp.buf.workspace_symbol()
 					end, "[W]orkspace [S]ymbols")
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })

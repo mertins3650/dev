@@ -2,7 +2,9 @@ return {
 	{
 		"folke/snacks.nvim",
 		opts = {
-			picker = {},
+			picker = {
+				layout = "telescope",
+			},
 		},
 		keys = {
 			{
@@ -11,13 +13,6 @@ return {
 					Snacks.picker.smart()
 				end,
 				desc = "Smart Find Files",
-			},
-			{
-				"<leader>,",
-				function()
-					Snacks.picker.buffers()
-				end,
-				desc = "Buffers",
 			},
 			{
 				"<leader>:",
@@ -31,50 +26,28 @@ return {
 				function()
 					Snacks.picker.notifications()
 				end,
-				desc = "Notification History",
+				desc = "[N]otification History",
 			},
 			{
-				"<leader>e",
-				function()
-					Snacks.explorer()
-				end,
-				desc = "File Explorer",
-			},
-			-- find
-			{
-				"<leader>fb",
+				"<leader>b",
 				function()
 					Snacks.picker.buffers()
 				end,
-				desc = "Buffers",
-			},
-			{
-				"<leader>fc",
-				function()
-					Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-				end,
-				desc = "Find Config File",
+				desc = "[B]uffers",
 			},
 			{
 				"<leader>sf",
 				function()
 					Snacks.picker.files()
 				end,
-				desc = "Find Files",
+				desc = "[F]iles",
 			},
 			{
-				"<leader>fg",
+				"<leader>gf",
 				function()
 					Snacks.picker.git_files()
 				end,
 				desc = "Find Git Files",
-			},
-			{
-				"<leader>fp",
-				function()
-					Snacks.picker.projects()
-				end,
-				desc = "Projects",
 			},
 			{
 				"<leader>fr",
@@ -135,13 +108,6 @@ return {
 			},
 			-- Grep
 			{
-				"<leader>sb",
-				function()
-					Snacks.picker.lines()
-				end,
-				desc = "Buffer Lines",
-			},
-			{
 				"<leader>sB",
 				function()
 					Snacks.picker.grep_buffers()
@@ -153,7 +119,7 @@ return {
 				function()
 					Snacks.picker.grep()
 				end,
-				desc = "Grep",
+				desc = "[G]rep",
 			},
 			{
 				"<leader>sw",
@@ -263,11 +229,11 @@ return {
 				desc = "[R]esume",
 			},
 			{
-				"<leader>su",
+				"<leader>uh",
 				function()
 					Snacks.picker.undo()
 				end,
-				desc = "[U]ndo History",
+				desc = "[U]ndo [H]istory",
 			},
 		},
 	},
