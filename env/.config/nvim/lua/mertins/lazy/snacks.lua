@@ -5,8 +5,16 @@ return {
 			picker = {
 				layout = "telescope",
 			},
+			explorer = {},
 		},
 		keys = {
+			{
+				"<leader>fe",
+				function()
+					Snacks.explorer()
+				end,
+				desc = "File Explorer",
+			},
 			{
 				"<leader><space>",
 				function()
@@ -233,7 +241,64 @@ return {
 				function()
 					Snacks.picker.undo()
 				end,
-				desc = "[U]ndo [H]istory",
+				desc = "LSP: [U]ndo [H]istory",
+			},
+			{
+				"gd",
+				function()
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "LSP: [G]oto [D]efinition",
+			},
+			{
+				"gD",
+				function()
+					Snacks.picker.lsp_declarations()
+				end,
+				desc = "Goto Declaration",
+			},
+			{
+				"gr",
+				function()
+					Snacks.picker.lsp_references()
+				end,
+				nowait = true,
+				desc = "LSP: [G]oto [R]eferences",
+			},
+			{
+				"gI",
+				function()
+					Snacks.picker.lsp_implementations()
+				end,
+				desc = "LSP: [G]oto [I]mplementation",
+			},
+			{
+				"gy",
+				function()
+					Snacks.picker.lsp_type_definitions()
+				end,
+				desc = "LSP: Goto T[y]pe Definition",
+			},
+			{
+				"<leader>ss",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "LSP: LSP Symbols",
+			},
+			{
+				"<leader>cA",
+				function()
+					Snacks.picker.code_actions()
+				end,
+				desc = "LSP: LSP Symbols",
+			},
+			{
+				"<leader>sS",
+				function()
+					Snacks.picker.lsp_workspace_symbols()
+				end,
+				desc = "LSP Workspace Symbols",
 			},
 		},
 	},
