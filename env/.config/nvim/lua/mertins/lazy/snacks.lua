@@ -223,13 +223,6 @@ return {
 				desc = "[M]an Pages",
 			},
 			{
-				"<leader>sq",
-				function()
-					Snacks.picker.qflist()
-				end,
-				desc = "[Q]uickfix List",
-			},
-			{
 				"<leader>sR",
 				function()
 					Snacks.picker.resume()
@@ -248,14 +241,14 @@ return {
 				function()
 					Snacks.picker.lsp_definitions()
 				end,
-				desc = "LSP: [G]oto [D]efinition",
+				desc = "LSP: [G]oto [d]efinition",
 			},
 			{
 				"gD",
 				function()
 					Snacks.picker.lsp_declarations()
 				end,
-				desc = "Goto Declaration",
+				desc = "LSP: [G]oto [D]eclaration",
 			},
 			{
 				"gr",
@@ -287,18 +280,11 @@ return {
 				desc = "LSP: LSP Symbols",
 			},
 			{
-				"<leader>cA",
-				function()
-					Snacks.picker.code_actions()
-				end,
-				desc = "LSP: LSP Symbols",
-			},
-			{
 				"<leader>sS",
 				function()
 					Snacks.picker.lsp_workspace_symbols()
 				end,
-				desc = "LSP Workspace Symbols",
+				desc = "LSP: Workspace Symbols",
 			},
 		},
 	},
