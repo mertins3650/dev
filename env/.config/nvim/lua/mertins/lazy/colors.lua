@@ -2,7 +2,10 @@ local theme = "tokyonight"
 -- local theme = "catppuccin"
 
 function ColorMyPencils(color)
+	vim.opt.winhighlight = "NormalNC:NormalFloat"
 	vim.cmd.colorscheme(color or theme)
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#011218", fg = "#CBE0F0" })
+	vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#011218", fg = "#547998" })
 end
 
 local themes = {
@@ -13,7 +16,7 @@ local themes = {
 		priority = 1000,
 		config = function()
 			local bg = "#011628"
-			local bg_dark = "#011423"
+			local bg_dark = "#011218"
 			local bg_highlight = "#143652"
 			local bg_search = "#0A64AC"
 			local bg_visual = "#275378"
