@@ -95,7 +95,6 @@ local handlers = {
 	end,
 }
 
--- This function will be used as a dynamic node
 local function go_result_type(info)
 	local node = vim.treesitter.get_node()
 	while node ~= nil do
