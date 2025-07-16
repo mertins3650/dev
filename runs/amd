@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-paru -Syu mesa vulkan-radeon libva-mesa-driver libvdpau-va-gl --noconfirm --needed

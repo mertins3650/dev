@@ -4,12 +4,12 @@ local theme = "tokyonight"
 
 function ColorMyPencils(color)
 	vim.cmd.colorscheme(color or theme)
-	vim.opt.winhighlight = "NormalNC:NormalFloat"
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 	vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 	vim.api.nvim_set_hl(0, "CursorLineSign", { bg = "none" })
 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = "#222436" })
 end
 
 local themes = {

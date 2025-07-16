@@ -44,6 +44,13 @@ return {
 				desc = "[B]uffers",
 			},
 			{
+				"<leader>sb",
+				function()
+					Snacks.picker.buffers()
+				end,
+				desc = "[B]uffers",
+			},
+			{
 				"<leader>sf",
 				function()
 					Snacks.picker.files()

@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-paru -Syu brave-bin --noconfirm --needed
