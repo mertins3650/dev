@@ -24,4 +24,4 @@ return {
 		})
 	end,
 },
-	vim.keymap.set("n", "<leader>cl", "<cmd>:CloakToggle<CR>", { desc = "[C]loak [T]ggle", silent = true })
+	vim.keymap.set("n", "<leader>ct", "<cmd>:CloakToggle<CR>", { desc = "[C]loak [T]ggle", silent = true })

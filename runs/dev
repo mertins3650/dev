@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-paru -Syu opencode-bin yarn go nodejs npm pnpm postgresql postgresql-libs llvm clang cargo  --noconfirm --needed
+paru -Syu opencode-bin sqlite yarn go nodejs npm pnpm postgresql postgresql-libs llvm clang cargo vim --noconfirm --needed
 
 install_go_binary() {
     local binary=$1
