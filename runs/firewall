@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if ! command -v ufw &>/dev/null; then
+  paru -Syu --noconfirm --needed ufw ufw-docker
+
+  sudo ufw default deny incoming
+  sudo ufw default allow outgoing
+ 
+  sudo ufw allow 53317/udp
+  sudo ufw allow 53317/tcp
+ 
+  sudo ufw allow 22/tcp
+ 
+  sudo ufw allow in on docker0 to any port 53
+ 
+  sudo ufw enable
+  sudo ufw reload
+fi
