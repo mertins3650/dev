@@ -2,8 +2,8 @@
 
 programs=(
     linux-headers
-    prettierd
-    networkmanager
+    impala
+    satty
     lsof
     feh
     pavucontrol
@@ -13,4 +13,3 @@ programs=(
 )
 
 paru -Syu "${programs[@]}" --noconfirm --needed
-sudo systemctl enable NetworkManager
