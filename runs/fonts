@@ -3,6 +3,7 @@
 programs=(
     ttf-font-awesome
     ttf-cascadia-code-nerd
+    ttf-cascadia-mono-nerd
 )
 
 paru -Syu "${programs[@]}" --noconfirm --needed

@@ -1,11 +1,13 @@
 shell-integration-features = no-cursor,no-sudo,title
 window-padding-color = background
 window-decoration = false
+background = #1a1b26
 theme = tokyonight_moon
 command = tmux
 font-size = 19
 font-feature = -calt, -liga, -dlig
-font-family = "CaskaydiaCove Nerd Font Mono"
+#font-family = "CaskaydiaCove Nerd Font Mono"
+font-family = "CaskaydiaMono Nerd Font"
 background-opacity = 0.98
 
 keybind = ctrl+shift+r=reload_config
