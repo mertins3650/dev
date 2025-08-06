@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-paru -Syu kvantum-qt5 --noconfirm --needed
+
+programs=(
+    kvantum-qt5
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed
 
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"

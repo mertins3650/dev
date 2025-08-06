@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-paru -Syu ttf-font-awesome ttf-cascadia-code-nerd --noconfirm --needed
+
+programs=(
+    ttf-font-awesome
+    ttf-cascadia-code-nerd
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

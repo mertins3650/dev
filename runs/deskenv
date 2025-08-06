@@ -1,2 +1,20 @@
 #!/usr/bin/env bash
-paru -Syu uwsm wofi mako hyprland hyprpaper hypridle hyprpolkitagent hyprland-qtutils hyprlock hyprshot waybar xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm --needed
+
+programs=(
+    uwsm
+    swayosd
+    wofi
+    mako
+    hyprland
+    hyprpaper
+    hypridle
+    hyprpolkitagent
+    hyprland-qtutils
+    hyprlock
+    hyprshot
+    waybar
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

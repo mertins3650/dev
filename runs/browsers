@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
-paru -Syu brave-bin qutebrowser python-adblock --noconfirm --needed
+
+programs=(
+    brave-bin
+    qutebrowser
+    python-adblock
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

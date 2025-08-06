@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-paru -Syu steam bottles --noconfirm --needed
+
+programs=(
+    steam
+    bottles
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

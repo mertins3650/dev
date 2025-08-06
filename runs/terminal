@@ -1,2 +1,15 @@
 #!/usr/bin/env bash
-paru -Syu fzf zsh ghostty curl jq pacman-contrib ripgrep eza zoxide  --noconfirm --needed
+
+programs=(
+    fzf
+    zsh
+    ghostty
+    curl
+    jq
+    pacman-contrib
+    ripgrep
+    eza
+    zoxide
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

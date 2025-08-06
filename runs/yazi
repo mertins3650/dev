@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-paru -Syu yazi --noconfirm --needed
+
+programs=(
+    yazi
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

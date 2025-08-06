@@ -9,11 +9,11 @@ return {
 		},
 		keys = {
 			{
-				"<leader>fe",
+				"<leader>se",
 				function()
 					Snacks.explorer()
 				end,
-				desc = "File Explorer",
+				desc = "[S]nacks [E]xplorer",
 			},
 			{
 				"<leader><space>",
@@ -65,11 +65,11 @@ return {
 				desc = "Find Git Files",
 			},
 			{
-				"<leader>fr",
+				"<leader>sr",
 				function()
 					Snacks.picker.recent()
 				end,
-				desc = "Recent",
+				desc = "[S]earch [R]ecent",
 			},
 			-- git
 			{

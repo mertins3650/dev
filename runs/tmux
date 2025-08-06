@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-paru -Syu tmux  --noconfirm --needed
+
+programs=(
+    tmux
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

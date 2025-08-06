@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-paru -Syu tlp --noconfirm --needed
+
+programs=(
+    tlp
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-paru -Syu qmk --noconfirm --needed
+
+programs=(
+    qmk
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed

@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
-paru -Syu neovim lazygit luarocks --noconfirm --needed 
+
+programs=(
+    neovim
+    lazygit
+    luarocks
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed 

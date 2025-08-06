@@ -19,7 +19,6 @@ alias ndev="nix develop -c \$SHELL"
 alias qmklily="qmk compile -kb lily58/rev1 -km lily58_qmk -e CONVERT_TO=rp2040_ce"
 alias qmkiris="qmk compile -kb keebio/iris/rev8 -km iris_qmk"
 alias qmkupdate="git pull origin master"
-alias sshhomelab="ssh homelab@192.168.0.101"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"

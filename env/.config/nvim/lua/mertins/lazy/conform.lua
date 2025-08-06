@@ -14,7 +14,7 @@ return {
 			},
 		},
 		opts = {
-			notify_on_error = false,
+			notify_on_error = true,
 			format_on_save = function(bufnr)
 				local disable_filetypes = { c = true, cpp = true }
 				local lsp_format_opt
@@ -36,8 +36,6 @@ return {
 				go = { "gofmt" },
 				html = { "prettierd" },
 				astro = { "prettierd" },
-				nix = { "nixfmt" },
-				python = { "ruff" },
 				json = { "prettierd" },
 				yaml = { "prettierd" },
 				markdown = { "prettierd" },

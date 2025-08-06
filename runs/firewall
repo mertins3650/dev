@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 if ! command -v ufw &>/dev/null; then
-  paru -Syu --noconfirm --needed ufw ufw-docker
+  programs=(
+      ufw
+      ufw-docker
+  )
+  
+  paru -Syu "${programs[@]}" --noconfirm --needed
 
   sudo ufw default deny incoming
   sudo ufw default allow outgoing

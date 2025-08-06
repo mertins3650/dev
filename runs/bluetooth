@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-paru -Syu blueberry --noconfirm --needed 
+
+programs=(
+    blueberry
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed 
 
 sudo systemctl enable --now bluetooth.service

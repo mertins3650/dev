@@ -1,5 +1,22 @@
 #!/usr/bin/env bash
-paru -Syu opencode-bin sqlite yarn go nodejs npm pnpm postgresql postgresql-libs llvm clang cargo vim --noconfirm --needed
+
+programs=(
+    opencode-bin
+    sqlite
+    yarn
+    go
+    nodejs
+    npm
+    pnpm
+    postgresql
+    postgresql-libs
+    llvm
+    clang
+    cargo
+    vim
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed
 
 install_go_binary() {
     local binary=$1

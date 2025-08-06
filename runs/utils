@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
-paru -Syu linux-headers prettierd networkmanager lsof feh pavucontrol brightnessctl nautilus wl-clipboard --noconfirm --needed
+
+programs=(
+    linux-headers
+    prettierd
+    networkmanager
+    lsof
+    feh
+    pavucontrol
+    brightnessctl
+    nautilus
+    wl-clipboard
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed
 sudo systemctl enable NetworkManager

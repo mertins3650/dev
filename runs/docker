@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-paru -Syu --noconfirm --needed docker docker-compose
+
+programs=(
+    docker
+    docker-compose
+)
+
+paru -Syu "${programs[@]}" --noconfirm --needed
 
 echo '{"log-driver":"json-file","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json
 

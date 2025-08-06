@@ -1,9 +1,7 @@
 shell-integration-features = no-cursor,no-sudo,title
 window-padding-color = background
 window-decoration = false
-theme = tokyonight_night
-#background = 011628
-background = 111111
+theme = tokyonight_moon
 command = tmux
 font-size = 19
 font-feature = -calt, -liga, -dlig
