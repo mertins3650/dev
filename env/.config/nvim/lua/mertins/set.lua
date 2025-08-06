@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
-vim.g.have_nerd_font = false
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+-- vim.g.have_nerd_font = false
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.colorcolumn = "80"
@@ -15,6 +17,7 @@ vim.opt.wrap = false
 vim.opt.breakindent = true
 
 vim.opt.undofile = true
+
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
