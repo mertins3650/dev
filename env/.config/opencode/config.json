@@ -1,3 +1,4 @@
 {
-  "theme": "tokyonight"
+  "theme": "tokyonight",
+  "$schema": "https://opencode.ai/config.json"
 }
