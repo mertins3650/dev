@@ -3,22 +3,22 @@
 CPU_VENDOR=$(lscpu | grep -i "vendor id" | awk '{print $3}')
 
 if [[ "$CPU_VENDOR" == "AuthenticAMD" ]]; then
-    programs=(
-        mesa
-        vulkan-radeon
-        libva-mesa-driver
-        libvdpau-va-gl
-    )
-    paru -Syu "${programs[@]}" --noconfirm --needed
+  programs=(
+    mesa
+    vulkan-radeon
+    libva-mesa-driver
+    libvdpau-va-gl
+  )
+  yay -Syu "${programs[@]}" --noconfirm --needed
 elif [[ "$CPU_VENDOR" == "GenuineIntel" ]]; then
-    programs=(
-        mesa
-        libva-intel-driver
-        intel-media-driver
-        vulkan-intel
-    )
-    paru -Syu "${programs[@]}" --noconfirm --needed
+  programs=(
+    mesa
+    libva-intel-driver
+    intel-media-driver
+    vulkan-intel
+  )
+  paru -Syu "${programs[@]}" --noconfirm --needed
 else
-    echo "Unsupported CPU vendor: $CPU_VENDOR"
-    exit 1
+  echo "Unsupported CPU vendor: $CPU_VENDOR"
+  exit 1
 fi
