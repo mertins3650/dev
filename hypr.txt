@@ -1,0 +1,82 @@
+# .bashrc
+export EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"
+export DEV_ENV="$HOME/dev"
+
+
+alias ls='eza -lh --group-directories-first --icons=auto'
+alias cd="z"
+alias qmklily="qmk compile -kb lily58/rev1 -km lily58_qmk -e CONVERT_TO=rp2040_ce"
+alias qmkiris="qmk compile -kb keebio/iris/rev8 -km iris_qmk"
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/scripts:$PATH"
+export PATH="$HOME/:$PATH"
+
+# hypr binding
+# Application bindings
+$terminal = uwsm app -- alacritty
+$browser = omarchy-launch-browser
+
+bindd = SUPER, return, Terminal, exec, $terminal --working-directory=$(omarchy-cmd-terminal-cwd)
+bindd = SUPER, F, File manager, exec, uwsm app -- nautilus --new-window
+bindd = SUPER, B, Browser, exec, $browser
+bindd = SUPER, M, Music, exec, uwsm app -- spotify
+bindd = SUPER, N, Neovim, exec, $terminal -e nvim
+bindd = SUPER, T, Activity, exec, $terminal -e btop
+bindd = SUPER CONTROL, D, Docker, exec, $terminal -e lazydocker
+bindd = SUPER, G, Signal, exec, uwsm app -- signal-desktop
+bindd = SUPER, O, Obsidian, exec, uwsm app -- obsidian -disable-gpu
+bindd = SUPER, slash, Passwords, exec, uwsm app -- 1password
+
+bindd = SUPER, A, ChatGPT, exec, omarchy-launch-webapp "https://chatgpt.com"
+bindd = SUPER SHIFT, A, Grok, exec, omarchy-launch-webapp "https://grok.com"
+bindd = SUPER, C, Calendar, exec, omarchy-launch-webapp "https://app.hey.com/calendar/weeks/"
+bindd = SUPER, E, Email, exec, omarchy-launch-webapp "https://app.hey.com"
+bindd = SUPER, Y, YouTube, exec, omarchy-launch-webapp "https://youtube.com/"
+bindd = SUPER SHIFT, G, WhatsApp, exec, omarchy-launch-webapp "https://web.whatsapp.com/"
+bindd = SUPER ALT, G, Google Messages, exec, omarchy-launch-webapp "https://messages.google.com/web/conversations"
+bindd = SUPER, X, X, exec, omarchy-launch-webapp "https://x.com/"
+bindd = SUPER SHIFT, X, X Post, exec, omarchy-launch-webapp "https://x.com/compose/post"
+bind = SUPER SHIFT, D, exec, hyprctl keyword monitor eDP-1, disable
+bind = SUPER SHIFT, F, exec, hyprctl keyword monitor eDP-1, enable
+bind = SUPER SHIFT, R, exec, hyprctl reload
+
+#Unbinds
+unbind = SUPER, J
+unbind = SUPER, K
+unbind = SUPER, W
+unbind = SUPER, SPACE
+unbind = SUPER ALT, SPACE
+unbind = SUPER, E
+unbind = SUPER, C
+unbind = SUPER, D
+unbind = SUPER, Q
+unbind = SUPER, N
+
+
+#hjkl navigation
+bind = SUPER, S, togglesplit
+bind = SUPER, h, movefocus, l
+bind = SUPER, l, movefocus, r
+bind = SUPER, k, movefocus, u
+bind = SUPER, j, movefocus, d
+bind = SUPER SHIFT, h, movewindow, l
+bind = SUPER SHIFT, l, movewindow, r
+bind = SUPER SHIFT, k, movewindow, u
+bind = SUPER SHIFT, j, movewindow, d
+bindd = SUPER CONTROL, K, Show key bindings, exec, ~/.local/share/omarchy/bin/omarchy-menu-keybindings
+
+bindd = SUPER, C, Calendar, exec, omarchy-launch-webapp "https://calendar.proton.me/"
+bindd = SUPER, E, Email, exec, omarchy-launch-webapp "https://mail.proton.me/"
+bindd = SUPER, N, Email, exec, omarchy-launch-webapp "https://netflix.com/"
+
+bind = SUPER, Q, killactive
+bindd = SUPER, D, Launch apps, exec, walker -p "Start…"
+bindd = SUPER ALT, D, Run commands, exec, ~/.local/share/omarchy/bin/omarchy-menu
+
+#alacritty
+[terminal.shell]
+program = "tmux"
+
