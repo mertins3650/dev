@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+append_if_missing() {
+    local source_file="$1"
+    local target_file="$2"
+
+    # Ensure arguments are provided
+    if [[ -z "$source_file" || -z "$target_file" ]]; then
+        echo "Usage: append_if_missing <source_file> <target_file>"
+        return 1
+    fi
+
+    # Check if files exist
+    if [[ ! -f "$source_file" ]]; then
+        echo "Source file '$source_file' not found!"
+        return 1
+    fi
+
+    if [[ ! -f "$target_file" ]]; then
+        echo "Target file '$target_file' not found!"
+        return 1
+    fi
+
+    # Read source content
+    local source_content
+    source_content=$(<"$source_file")
+
+    # Check if content already exists
+    if grep -Fq "$source_content" "$target_file"; then
+        echo "Text from '$source_file' already exists in '$target_file'."
+    else
+        echo "Adding text from '$source_file' to '$target_file'..."
+        echo -e "\n# --- Added by script on $(date) ---" >> "$target_file"
+        cat "$source_file" >> "$target_file"
+        echo "Done!"
+    fi
+}
+
+append_if_missing ~/dev/omarchy/configs/test.conf ~/.config/hypr/bindings.conf
